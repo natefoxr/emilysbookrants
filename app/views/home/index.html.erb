@@ -51,7 +51,7 @@
           <div class="card-img-css"></div>
           <div class="card-img-overlay">
             <h1 class="card-title page-nav">
-              <a class="text-decoration-none link-animation-2" href="#">Blog</a>
+              <%= link_to 'Blog', root_path, class: "text-decoration-none link-animation-2" %>
             </h1>
           </div>
         </div>
@@ -62,7 +62,7 @@
           <div class="card-img-css"></div>
           <div class="card-img-overlay">
             <h1 class="card-title page-nav">
-              <a class="text-decoration-none link-animation-2" href="#">Book Recs</a>
+              <%= link_to 'Book Recs', root_path, class: "text-decoration-none link-animation-2" %>
             </h1>
           </div>
         </div>
@@ -74,7 +74,7 @@
           <div class="card-img-overlay">
             <h1 class="card-title page-nav">
               <!-- #TODO: Remember to enable when chat section is done -->
-              <a class="text-decoration-none disabled-link-animation-2" href="#">Connect</a>
+              <%= link_to 'Connect', root_path, class: "text-decoration-none link-animation-2" %>
             </h1>
           </div>
         </div>
@@ -86,7 +86,7 @@
   <div class="card about-snip mb-3 w-lg-100">
     <div class="row g-0">
       <div class="col-xl-5 col-xxl-6">
-        <img src="https://media-exp1.licdn.com/dms/image/C5603AQG6b7iJpQ_TAg/profile-displayphoto-shrink_800_800/0/1617068629774?e=1665014400&v=beta&t=cBbE4EEtc7RnK5UcuZIpliRGT0h5aGjiztKZt4IEcUA" class="img-fluid abt-photo rounded-start" alt="Emily">
+        <%= image_tag "cover.jpg", class: "img-fluid abt-photo rounded-start", alt: "Emily" %>
       </div>
       <div class="col-xl-7 col-xxl-6">
         <div class="card-body">
