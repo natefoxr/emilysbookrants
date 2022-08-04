@@ -1,0 +1,97 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    overflow: auto;
+    background: linear-gradient(180deg, rgba(227,210,111,1) 0%, rgba(255,140,97,0.5046393557422969) 100%) fixed;
+    background-repeat: no-repeat;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgba(227,210,111,1) 0%, rgba(255,140,97,0.5046393557422969) 100%);
+}
+::-webkit-scrollbar-thumb {
+    background: #545F66;
+    border-radius: 7.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3b4144;
+}
+.navbar {
+    padding: 2rem;
+}
+.navbar-brand {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #545F66 !important;
+}
+.link-animation-1 {
+    padding-bottom: 4px;
+    background:
+      radial-gradient(circle closest-side, currentColor 80%, transparent) -6px 100% /6px 6px no-repeat,
+      linear-gradient(currentColor 0 0) bottom left /var(--d, 0) 6px no-repeat;
+    transition: 0.3s linear !important;
+  }
+.link-animation-1:hover {
+    --d: 75%;
+    background-position: 75% 100%, bottom left;
+    color: #5AB1BB !important;
+}
+.link-animation-2 {
+    padding-bottom: 2px;
+    background:
+      radial-gradient(circle closest-side, currentColor 80%, transparent) -3px 100% /3px 3px no-repeat,
+      linear-gradient(currentColor 0 0) bottom left /var(--d, 0) 3px no-repeat;
+    transition: 0.3s linear !important;
+}
+.link-animation-2:hover {
+    --d: 75%;
+    background-position: 75% 100%, bottom left;
+    color: #5AB1BB !important;
+}
+.nav-link {
+    font-size: 1.5rem;
+    color: #545F66 !important;
+}
+.nav-item {
+    padding-right: 1rem;
+}
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+.page-nav {
+    height: 90%; 
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-img-css {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: .5;
+ }
+.page-nav a {
+    color: #BBDEF0;
+}
+.about-snip {
+    width: 50%;
+    margin: auto;
+}
+.abt-photo {
+    width: 100%;
+    height: 100%;
+}
+.footer-nav {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #BBDEF0;
+}
+.quotes-css {
+    font-family: 'Cookie', cursive;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 21vh;
+}
