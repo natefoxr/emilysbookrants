@@ -1,0 +1,25 @@
+<div class="row justify-content-center mx-2 mb-3">
+  <%= link_to 'Create New Article', new_article_path, class: "btn btn-light border-secondary shadow-3 w-75 py-3 my-4" %>
+  <% @articles.each do |article| %>
+    <div class="card blog-snip mb-3 bg-transparent border-0">
+      <div class="row g-0">
+        <div class="col-sm-5 col-lg-4 col-xl-3">
+          <%= image_tag "cover.jpg", class: "img-fluid blog-photo rounded rounded-5", alt: article.title %>
+        </div>
+        <div class="offset-sm-1 col-sm-6 col-lg-7 col-xl-8">
+          <div class="card-body">
+            <small><%= article.tag %></small>
+            <h1 class="card-title"><%= link_to article.title, article_path(article), class: "blog-title link-animation-1 text-decoration-none" %></h1>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <%= link_to 'Show', article_path(article), class: "btn btn-light text-success border-success shadow" %>
+            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-light text-primary border-primary shadow" %>
+            <%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete, "turbo-confirm": 'Are you sure?' }, class: "btn btn-light text-danger border-danger shadow" %>
+          </div>
+          <div class="card-footer bg-transparent text-muted">
+            <small>Created: <%= time_ago_in_words(article.created_at) %> ago &ensp;|&ensp; Edited: <%= time_ago_in_words(article.updated_at) %> ago</small>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>
+
