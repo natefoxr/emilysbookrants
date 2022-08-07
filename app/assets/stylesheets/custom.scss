@@ -72,7 +72,10 @@ body {
     position: absolute;
     background-color: #000;
     opacity: .5;
- }
+}
+.homepage-blog-img {
+    height: 342px;
+}
 .page-nav a {
     color: #BBDEF0;
 }
@@ -101,4 +104,14 @@ body {
 }
 .blog-title {
     color: #545F66 !important;
+}
+.read-more {
+    color: #545F66 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+.read-more:hover {
+    color: #3b4144 !important;
+    text-decoration: underline;
+    font-weight: bolder;
 }

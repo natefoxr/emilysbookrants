@@ -9,36 +9,29 @@
   <!-- Contains the 3 most recent posts  -->
   <div class="container">
     <div class="row recent-posts m-4">
+    <% 
+    i = 0
+    Article.all.reverse.each do |article| 
+      i += 1
+      if i > 3
+        break
+      else
+    %>
       <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0">
         <div class="card mx-md-4 my-2">
-          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" class="card-img-top" alt="blog-post-template">
+          <% if article.id.odd? %>
+            <img src="https://images.unsplash.com/photo-1471440671318-55bdbb772f93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80" class="card-img-top homepage-blog-img" alt=<%= article.title %>>
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1574629174070-63e3564b1916?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=849&q=80" class="card-img-top homepage-blog-img" alt=<%= article.title %>>
+          <% end %>
           <div class="card-body">
-            <h5 class="card-title">Insert Blog Title</h5>
-            <p class="card-text">Insert blog tl:dr.</p>
-            <a href="#" class="btn btn-secondary">Show Article</a>
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text lead"><%= article.short_description %></p>
+            <%= link_to 'Read More', article_path(article), class: "read-more" %>
           </div>
         </div>
       </div>
-      <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0">
-        <div class="card mx-md-4 my-2">
-          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" class="card-img-top" alt="blog-post-template">
-          <div class="card-body">
-            <h5 class="card-title">Insert Blog Title</h5>
-            <p class="card-text">Insert blog tl:dr.</p>
-            <a href="#" class="btn btn-secondary">Show Article</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0">
-        <div class="card mx-md-4 my-2">
-          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" class="card-img-top" alt="blog-post-template">
-          <div class="card-body">
-            <h5 class="card-title">Insert Blog Title</h5>
-            <p class="card-text">Insert blog tl:dr.</p>
-            <a href="#" class="btn btn-secondary">Show Article</a>
-          </div>
-        </div>
-      </div>
+    <% end end %>
     </div>
   </div>
 
