@@ -1,36 +1,37 @@
 <%= render 'shared/errors' %>
 
-
-<%= form_with(model: @article, data: { turbo: false }, local: true) do |f| %>
-  <div class="container bg-secondary p-3 rounded shadow">
-    <div class="my-3 row">
-      <%= f.label :title, class: "col-sm-1 col-form-label text-light", for:"FormControlInput1" %>
-      <div class="col-sm-11">
-        <%= f.text_field :title, type: "text", class: "form-control shadow", id: "FormControlInput1", placeholder: "Title of Article" %>
+<div class="mx-4">
+  <%= form_with(model: @article, data: { turbo: false }, local: true) do |f| %>
+    <div class="container bg-secondary p-3 rounded shadow">
+      <div class="my-3 row">
+        <%= f.label :title, class: "col-sm-1 col-form-label text-light", for:"FormControlInput1" %>
+        <div class="col-sm-11">
+          <%= f.text_field :title, type: "text", class: "form-control shadow", id: "FormControlInput1", placeholder: "Title of Article" %>
+        </div>
+      </div>
+      <div class="my-3 row">
+        <%= f.label :short_description, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
+        <div class="col-sm-11">
+          <%= f.text_area :short_description, class: "form-control shadow", id: "FormControlTextarea1", placeholder: "Brief Description", rows: "1" %>
+        </div>
+      <div class="my-3 row">
+        <%= f.label :description, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
+        <div class="col-sm-11">
+          <%= f.text_area :description, class: "form-control shadow", id: "FormControlTextarea1", placeholder: "Description", rows: "20" %>
+        </div>
+      </div>
+      <div class="my-3 row">
+        <%= f.label :tag, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
+        <div class="col-sm-11">
+          <%= f.select :tag, options_for_select(['Books', 'Travel', 'Food']), {}, class: "form-control shadow" %>
+        </div>
+      </div>
+      <div class="form-group mb-3 row">
+        <%= f.submit class:"btn btn-large btn-outline-dark text-light shadow col-6 fs-4 offset-3 text-wrap", id: "submit-button" %>
       </div>
     </div>
-    <div class="my-3 row">
-      <%= f.label :short_description, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
-      <div class="col-sm-11">
-        <%= f.text_area :short_description, class: "form-control shadow", id: "FormControlTextarea1", placeholder: "Brief Description", rows: "1" %>
-      </div>
-    <div class="my-3 row">
-      <%= f.label :description, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
-      <div class="col-sm-11">
-        <%= f.text_area :description, class: "form-control shadow", id: "FormControlTextarea1", placeholder: "Description", rows: "20" %>
-      </div>
-    </div>
-    <div class="my-3 row">
-      <%= f.label :tag, class: "col-sm-1 col-form-label text-light", for: "FormControlTextarea1" %>
-      <div class="col-sm-11">
-        <%= f.select :tag, options_for_select(['Books', 'Travel', 'Food']), {}, class: "form-control shadow" %>
-      </div>
-    </div>
-    <div class="form-group mb-3 row">
-      <%= f.submit class:"btn btn-large btn-outline-dark text-light shadow col-4 fs-4 offset-4", id: "submit-button" %>
-    </div>
+  <% end %>
+  <div class="text-center my-3">
+    <%= link_to '[ Cancel and return to Blog Posts ]', articles_path, class: "text-decoration-none text-info", id: "return-to-listings" %>
   </div>
-<% end %>
-<div class="text-center my-3">
-  <%= link_to '[ Cancel and return to Blog Posts ]', articles_path, class: "text-decoration-none text-info", id: "return-to-listings" %>
 </div>
