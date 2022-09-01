@@ -13,13 +13,13 @@ module ApplicationHelper
 
   def gravatar_for(user, options = { size: 100 })
     email_address = user.email.downcase
-    puts gravatar?(email_address)
-    if !gravatar?(email_address)
-      size = options[:size]
+    size = options[:size]
+    if email_address.to_s == "eabuhajleh@outlook.com"
+      image_tag("cover.jpg", alt: user.username, class: "rounded-circle shadow mx-auto d-block", style: "width: #{size}px; height: #{size}px")
+    elsif !gravatar?(email_address)
       image_tag("user.png", alt: user.username, class: "rounded-circle shadow mx-auto d-block p-2", style: "width: #{size}px; height: #{size}px")
     else
       hash = Digest::MD5.hexdigest(email_address)
-      size = options[:size]
       gravatar_url = "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
       image_tag(gravatar_url, alt: user.username, class: "rounded-circle shadow mx-auto d-block")
     end
