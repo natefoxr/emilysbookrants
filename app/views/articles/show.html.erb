@@ -6,7 +6,7 @@
       <div class="card-body">
         <h5 class="card-text text-start lead"><%= simple_format(@article.description) %></h5>
         <%= link_to 'Back', articles_path(), class: "btn btn-transparent text-secondary border-secondary shadow" %>
-        <% if logged_in? && (@article.user == current_user  || current_user.admin?) %>
+        <% if logged_in? && (current_user.admin?) %>
           <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-transparent text-primary border-primary shadow" %>
           <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete, "turbo-confirm": 'Are you sure?' }, class: "btn btn-transparent text-danger border-danger shadow" %>
         <% end %>
