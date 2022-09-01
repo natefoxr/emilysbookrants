@@ -6,8 +6,10 @@
       <div class="card-body">
         <h5 class="card-text text-start lead"><%= simple_format(@article.description) %></h5>
         <%= link_to 'Back', articles_path(), class: "btn btn-transparent text-secondary border-secondary shadow" %>
-        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-transparent text-primary border-primary shadow" %>
-        <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete, "turbo-confirm": 'Are you sure?' }, class: "btn btn-transparent text-danger border-danger shadow" %>
+        <% if logged_in? && (article.user == current_user  || current_user.admin?) %>
+          <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-transparent text-primary border-primary shadow" %>
+          <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete, "turbo-confirm": 'Are you sure?' }, class: "btn btn-transparent text-danger border-danger shadow" %>
+        <% end %>
       </div>
       <div class="card-footer border-0 bg-transparent text-muted">
         <small>Created: <%= time_ago_in_words(@article.created_at) %> ago &ensp;|&ensp; Edited: <%= time_ago_in_words(@article.updated_at) %> ago</small>

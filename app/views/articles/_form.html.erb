@@ -1,4 +1,4 @@
-<%= render 'shared/errors' %>
+<%= render 'shared/errors', obj: @article %>
 
 <div class="mx-4">
   <%= form_with(model: @article, data: { turbo: false }, local: true) do |f| %>
